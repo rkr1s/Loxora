@@ -1,0 +1,127 @@
+@use 'variables';
+@use 'mixins';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 60px 0;
+  max-width: 1390px;
+  margin: auto;
+
+  .footer-wrapper {
+    width: 100%;
+    display: flex;
+    @include mixins.media-query("tablet") {
+      padding: 0 30px;
+      display: block;
+    }
+  }
+  .copyright-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .footer-brand {
+      @include mixins.title-font();
+    }
+    .footer-copyright {
+      font-size: 16px;
+      line-height: 22px;
+      font-family: 'NewYork';
+      align-content: center;
+    }
+  }
+
+  .footer-section {
+    flex: 1;
+    margin-bottom: 20px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        margin-bottom: 10px;
+
+        a {
+          text-decoration: none;
+          color: variables.$color-primary;
+        }
+      }
+    }
+  }
+  .footer-subscribe {
+    flex: 3.5;
+    @include mixins.media-query("tablet") {
+      .section-title {
+        flex: 1;
+      }
+    }
+  }
+
+  .footer-social {
+      justify-content: flex-start;
+  }
+
+  .footer-bottom {
+    width: 100%;
+    @include mixins.media-query("tablet") {
+      text-align: center;
+      padding: 0 30px;
+
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    font-family: variables.$font-family-secondary;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  .footer-subscribe h3 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+
+    .fa {
+      font: normal normal normal 28px / 1 FontAwesome !important;
+    }
+  }
+
+  .footer-bottom {
+    hr {
+      @include mixins.horizontal-divider();
+      margin: 10px 0;
+    }
+  }
+  .subscribe-container {
+    display: flex;
+    border: 1px solid variables.$color-primary;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    justify-content: space-between;
+
+    input {
+      border: none;
+      background: none;
+      outline: none;
+      width: 100%;
+      padding: 5px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      font-size: variables.$font-size-base;
+      cursor: pointer;
+    }
+  }
+}

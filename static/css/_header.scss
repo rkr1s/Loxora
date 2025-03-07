@@ -1,0 +1,30 @@
+@use 'variables';
+@use 'mixins';
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: transparent;
+  padding: 15px 40px;
+  z-index: 1000;
+  @include mixins.transition(background 0.3s);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    @include mixins.title-font();
+    width: 100%;
+    text-align: center;
+    position: absolute;
+  }
+
+  &.scrolled {
+    background-color: variables.$background-light;
+  }
+  .fa {
+    font: normal normal normal 28px / 1 FontAwesome !important;
+  }
+}

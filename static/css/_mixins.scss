@@ -1,0 +1,39 @@
+@use 'variables';
+
+@mixin transition($properties, $duration: variables.$transition-speed, $ease: ease-in-out) {
+  transition: $properties $duration $ease;
+}
+
+@mixin media-query($breakpoint) {
+  @if $breakpoint == "tablet" {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "mobile" {
+    @media screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+@mixin title-font() {
+  font-family: variables.$font-family-secondary;
+  font-size: variables.$font-size-xl;
+  line-height: 44px;
+  font-weight: 400;
+}
+
+@mixin vertical-divider($height: 100%, $width: 1px, $color: variables.$color-primary) {
+  height: $height;
+  width: $width;
+  background-color: $color;
+  border: none;
+}
+
+@mixin horizontal-divider($height: 1px, $width: 100%, $color: variables.$color-primary) {
+  height: $height;
+  width: $width;
+  background-color: $color;
+  border: none;
+}
